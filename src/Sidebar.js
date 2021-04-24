@@ -13,7 +13,7 @@ import SidebarChat from "./SidebarChat";
 import './Sidebar.css';
 
 import db from './firebase';
-// import { useStateValue } from './StateProvider';
+import { useStateValue } from './StateProvider';
 
 import PropTypes from 'prop-types';
 
