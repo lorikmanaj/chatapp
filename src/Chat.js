@@ -7,19 +7,19 @@ import InsertEmoticonIcon from '@material-ui/icons/InsertEmoticon';
 
 import "./Chat.css";
 
-import { useParams } from 'react-router-dom';
+// import { useParams } from 'react-router-dom';
 import db from './firebase';
 import firebase from 'firebase';
-import {useStateValue} from "./StateProvider";
+// import {useStateValue} from "./StateProvider";
 
 function Chat() {
 
     const [input, setInput] = useState("");
     const [seed, setSeed] = useState("");
-    const {roomId} = useParams();
-    const [roomName, setRoomName] = useState("");
-    const [messages, setMessages] = useState([]);
-    const [{user}, dispatch] = useStateValue();
+    // const {roomId} = useParams();
+    // const [roomName, setRoomName] = useState("");
+    // const [messages, setMessages] = useState([]);
+    // const [{user}, dispatch] = useStateValue();
 
     useEffect(() => {
         setSeed(Math.floor(Math.random() * 5000));
@@ -27,11 +27,11 @@ function Chat() {
 
     const sendMessage = (e) => {
         e.preventDefault();
-        db.collection('rooms').doc(roomId).collection('messages').add({
-            message: input,
-            name: user.displayName,
-            timestamp: firebase.firestore.FieldValue.serverTimestamp(),
-        })
+        // db.collection('rooms').doc(roomId).collection('messages').add({
+        //     message: input,
+        //     // name: user.displayName,
+        //     timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+        // })
 
         setInput("");
     }
