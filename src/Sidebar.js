@@ -12,7 +12,7 @@ import { useStateValue } from './StateProvider';
 function Sidebar(props) {
 
     const [rooms, setRooms] = useState([]);
-    const [{ user }, dispatch] = useStateValue();
+    const [{user}, dispatch] = useStateValue();
 
     useEffect(() => {
         const unsubscribe = db.collection('rooms').onSnapshot(snapshot => (
@@ -28,7 +28,7 @@ function Sidebar(props) {
         return () => {
             unsubscribe();
         }
-    }, []); 
+    },[]); 
 
     return (
         <div className="sidebar">

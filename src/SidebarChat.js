@@ -9,7 +9,7 @@ function SidebarChat({id, name, addNewChat}) {
     const [messages, setMessages] = useState("");
     
     useEffect(() => {
-        if(id){
+        if (id){
             db.collection('rooms').doc(id).collection('messages').orderBy('timestamp','desc').onSnapshot(snapshot => {
                 setMessages(snapshot.docs.map((doc) => doc.data()))
             })
